@@ -38,6 +38,21 @@ body {
     font-weight: 400;
 }
 
+/* Emoji styles */
+.emoji {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* Apply emoji font to all elements containing emojis */
+[class*="emoji"], 
+.task-item .emoji, 
+.goal-category h3 .emoji,
+.music-platform .emoji {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .container {
     width: var(--container-width);
     margin: 0 auto;
