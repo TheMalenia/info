@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasan Khajeh</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hasan Khajeh</h1>
+            <p class="subtitle">Math & CS Enthusiast</p>
+        </header>
+
+        <section class="about">
+            <h2>👋 About Me</h2>
+            <!-- ABOUT_SECTION -->
+        </section>
+
+        <section class="interests">
+            <h2>✨ Interests</h2>
+            <!-- INTERESTS_SECTION -->
+        </section>
+
+        <section class="tasks">
+            <h2>🪻 Spring Goals</h2>
+            <!-- GOALS_SECTION -->
+        </section>
+
+        <section class="books">
+            <h2>📚 Books</h2>
+            <!-- BOOKS_SECTION -->
+        </section>
+
+        <section class="music">
+            <h2>🎵 Music</h2>
+            <!-- MUSIC_SECTION -->
+        </section>
+
+        <section class="contact">
+            <h2>🤝 Connect</h2>
+            <!-- CONTACT_SECTION -->
+        </section>
+
+        <!-- <section id="blog">
+            <h2>✍️ Blog</h2>
+            <!-- BLOG_SECTION -->
+        </section> -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Twemoji
+            twemoji.parse(document.body, {
+                folder: 'svg',
+                ext: '.svg',
+                callback: function(icon, options, variant) {
+                    // Preserve the original emoji class if it exists
+                    const emojiClass = icon.classList.contains('emoji') ? 'emoji' : '';
+                    return `${emojiClass}`;
+                }
+            });
+
+            // Music section show/hide functionality
+            const showMoreBtn = document.querySelector('.show-more-btn');
+            const musicContainer = document.querySelector('.music-container');
+            const hiddenItems = document.querySelectorAll('.music-item.music-hidden');
+            
+            if (showMoreBtn && musicContainer && hiddenItems.length > 0) {
+                showMoreBtn.addEventListener('click', function() {
+                    const isExpanded = musicContainer.classList.contains('music-show');
+                    musicContainer.classList.toggle('music-show');
+                    showMoreBtn.innerHTML = isExpanded ? 
+                        'Show More <span class="icon">↓</span>' : 
+                        'Show Less <span class="icon">↑</span>';
+                    // Re-run Twemoji on the button text to ensure consistent emoji rendering
+                    twemoji.parse(showMoreBtn);
+                });
+            }
+        });
+    </script>
+</body>
+</html> 

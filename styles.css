@@ -39,18 +39,27 @@ body {
 }
 
 /* Emoji styles */
-.emoji {
-    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-style: normal;
-    font-weight: normal;
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+    display: inline-block;
 }
 
-/* Apply emoji font to all elements containing emojis */
-[class*="emoji"], 
-.task-item .emoji, 
-.goal-category h3 .emoji,
+.task-item .emoji {
+    font-size: calc(var(--font-size-base) * 1.4);
+    min-width: calc(var(--font-size-base) * 1.4);
+    text-align: center;
+}
+
+.goal-category h3 .emoji {
+    font-size: calc(var(--font-size-base) * 1.4);
+    min-width: calc(var(--font-size-base) * 1.4);
+}
+
 .music-platform .emoji {
-    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: calc(var(--font-size-base) * 1.2);
 }
 
 .container {
@@ -178,12 +187,6 @@ section:hover {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.task-item .emoji {
-    font-size: calc(var(--font-size-base) * 1.4);
-    min-width: calc(var(--font-size-base) * 1.4);
-    text-align: center;
-}
-
 .task-content {
     flex: 1;
     display: flex;
@@ -274,10 +277,6 @@ section:hover {
 .interest-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.emoji {
-    font-size: calc(var(--font-size-base) * 1.2);
 }
 
 /* Contact section */
