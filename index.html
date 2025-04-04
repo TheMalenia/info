@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasan Khajeh</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
@@ -344,14 +344,13 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Twemoji
-            twemoji.parse(document.body, {
+            // Initialize Twemoji with specific configuration
+            window.twemoji.parse(document.body, {
                 folder: 'svg',
                 ext: '.svg',
+                base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/',
                 callback: function(icon, options, variant) {
-                    // Preserve the original emoji class if it exists
-                    const emojiClass = icon.classList.contains('emoji') ? 'emoji' : '';
-                    return `${emojiClass}`;
+                    return 'emoji ' + options.size;
                 }
             });
 
@@ -367,8 +366,12 @@
                     showMoreBtn.innerHTML = isExpanded ? 
                         'Show More <span class="icon">↓</span>' : 
                         'Show Less <span class="icon">↑</span>';
-                    // Re-run Twemoji on the button text to ensure consistent emoji rendering
-                    twemoji.parse(showMoreBtn);
+                    // Re-run Twemoji on the button text
+                    window.twemoji.parse(showMoreBtn, {
+                        folder: 'svg',
+                        ext: '.svg',
+                        base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/'
+                    });
                 });
             }
         });

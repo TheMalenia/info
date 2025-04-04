@@ -40,11 +40,39 @@ body {
 
 /* Emoji styles */
 img.emoji {
-    height: 1em;
-    width: 1em;
-    margin: 0 .05em 0 .1em;
-    vertical-align: -0.1em;
+    height: 1.2em;
+    width: 1.2em;
+    margin: 0 0.1em;
+    vertical-align: -0.2em;
     display: inline-block;
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+}
+
+h2 img.emoji {
+    height: 1.4em;
+    width: 1.4em;
+    vertical-align: -0.3em;
+}
+
+.task-item img.emoji {
+    height: 1.4em;
+    width: 1.4em;
+    vertical-align: -0.3em;
+}
+
+.goal-category h3 img.emoji {
+    height: 1.4em;
+    width: 1.4em;
+    vertical-align: -0.3em;
+}
+
+.music-platform img.emoji {
+    height: 1.2em;
+    width: 1.2em;
+    vertical-align: -0.2em;
 }
 
 .task-item .emoji {
